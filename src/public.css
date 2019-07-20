@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none !important;
+}
+table{
+    border-collapse: collapse;
+}
+img{
+    border: 0;
+    vertical-align: middle;
+}
+textarea{
+    resize: none;
+}
+input,button,select,textarea{
+    outline: none;
+}
+input,img,select{
+    vertical-align: middle;
+}
+body,button,input,select,textarea{
+    /* font: 14px/1.5 tahoma,arial,\5b8b\4f53; */
+}
