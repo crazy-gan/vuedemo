@@ -20,7 +20,7 @@ textarea{
     resize: none;
 }
 input,button,select,textarea{
-    outline: none;
+    /* outline: none; */
 }
 input,img,select{
     vertical-align: middle;

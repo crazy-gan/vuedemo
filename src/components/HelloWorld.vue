@@ -10,18 +10,25 @@
       :class="{finshied:item.isFinshied}"
       @click="item.isFinshied=!item.isFinshied"
       >{{item.name}}</li>
-      <div class="animated rollIn ll">
+      <div class="animated fadeInUpBig ll">
         6666
       </div>
-      <button type="button" id="btn" class="btn btn-primary">按钮</button>
     </ul>
-    
+    <ul>
+		<li v-for="(goods,index) of good" :key='index'>
+			{{goods}}
+			<slot :data="goods">
+				fgfgfgfgfg
+			</slot>
+		</li>
+	</ul>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+	props:['good'],//父组件传来的值
   data () {
     return {
       newlist:'',
@@ -32,7 +39,15 @@ export default {
         {name:'吃饭',isFinshied:false},
         {name:'洗碗',isFinshied:false},
         {name:'睡觉',isFinshied:false},
-      ]
+      ],
+	  test:[
+		  {name:'urse1',age:'18'},
+		  {name:'urse2',age:'19'},
+		  {name:'urse3',age:'20'},
+		  {name:'urse4',age:'21'},
+		  {name:'urse5',age:'22'},
+		  {name:'urse6',age:'23'},
+	  ]
     }
   },
   methods:{
@@ -40,14 +55,10 @@ export default {
       this.todoList.push({name:this.newlist,isFinshied:false})
       this.newlist=''
     }
+	
   },
   mounted() {
-    $(function(){
-      $('#btn').click(function(){
-      alert(666)
-    })
-    })
-    
+    console.log(this.good)
   }
 }
 </script>

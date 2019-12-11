@@ -2,11 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-
+//引入vuex仓库
+import store from './store/index.js'
 //引用公共css文件
 import publicCss from '@/public.css'
 Vue.use(publicCss)
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 
+Vue.use(ElementUI);
 //引入animate。css
 import 'animate.css';  
 
@@ -30,12 +34,19 @@ Vue.use(VueWechatTitle)
 import './assets/Iconfont/css/font-awesome.css'
 
 
+Vue.filter('capitalize',function(value){
+	if(!value) return ''
+	value = value.toString()
+	return value.charAt(0).toUpperCase()+value.slice(1)
+})
+Vue.config.silent = true
 Vue.config.productionTip = false
 //项目入口文件
 /* eslint-disable no-new */
 new Vue({
   el: '#app',//挂载点
   router,
+  store,
   components: { App },//根组件
   template: '<App/>'//组件模板
 })
