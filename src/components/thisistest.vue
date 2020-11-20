@@ -3,13 +3,16 @@
 		<div>
 			<p>这只是有个单独的组件 </p>
 			<div style="color: red;">
-				<slot name="red" >我是子组件里的</slot>
+				<!-- 显示的是父组件里的内容和样式 ，，，，具名插槽 -->
+				<slot name="red" >我是子组件里的(父组件没有时默认显示的)</slot>
 			</div>
 			<div style="color: blue;">
-				<slot name="blue" >我是子组件里的</slot>
+				<slot name="blue" >我是子组件里的(父组件没有时默认显示的)</slot>
 			</div>
 		</div>
 		<span>这是vuex里的值:{{count}}</span>
+
+		<!-- vue动画 -->
 		<div id="dynamic-fade-demo" class="demo">
 		  Fade In: <input type="range" v-model="fadeInDuration" min="0" v-bind:max="maxFadeDuration">
 		  Fade Out: <input type="range" v-model="fadeOutDuration" min="0" v-bind:max="maxFadeDuration">

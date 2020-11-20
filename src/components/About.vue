@@ -10,14 +10,18 @@
             </a>
           </li>
         </ul>
+        <!-- 带着值的插槽  v-slot子组件传过来的值 作用域插槽-->
+        <!-- 父组件向子组件传值，子组件用prop接受 -->
 		<HellowWorld :good='goods' v-slot='my_slot'>
-			<button @click="testBtn(my_slot)">测试</button>
-		</HellowWorld> <!-- 父组件向子组件传值，子组件用prop接受 -->
+			<button @click="testBtn(my_slot)">测试（父组件的按钮）</button>
+        </HellowWorld> 
+        
+
 		<button @click="btn_click">修改vuex值的按钮</button>
 		<!-- <button @click="btn_change">改变值的按钮</button> -->
 		<thisistest >
-			<template #red>
-				<p >{{info1}}</p>
+			<template slot='red' >
+				<p style="color: black;">{{info1}}</p>
 			</template>
 			<template #blue>
 				<p>{{info2}}</p>

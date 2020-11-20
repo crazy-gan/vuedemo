@@ -33,7 +33,7 @@ Vue.use(VueWechatTitle)
 //引入矢量图标
 import './assets/Iconfont/css/font-awesome.css'
 
-
+//首字母大写筛选器
 Vue.filter('capitalize',function(value){
 	if(!value) return ''
 	value = value.toString()

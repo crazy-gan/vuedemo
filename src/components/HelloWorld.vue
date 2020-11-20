@@ -16,8 +16,9 @@
     </ul>
     <ul>
 		<li v-for="(goods,index) of good" :key='index'>
-			{{goods}}
-			<slot :data="goods">
+      {{goods}}
+      <!-- 将数据传到父组件里 ，父组件控制slot里显示的内容-->
+			<slot :data="goods">  
 				fgfgfgfgfg
 			</slot>
 		</li>

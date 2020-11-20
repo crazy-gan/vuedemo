@@ -7,25 +7,6 @@
     				<div>
     					<ul class="country">
     						<li><a href="javascript:;">全球</a></li>
-<!--    						<li><a href="javascript:;">马来西亚</a></li>-->
-<!--    						<li><a href="javascript:;">澳大利亚</a></li>-->
-<!--    						<li><a href="javascript:;">新加坡</a></li>-->
-<!--    						<li><a href="javascript:;">香港</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
-<!--    						<li><a href="javascript:;">中国大陆</a></li>-->
     					</ul>
     				</div>
     			</li>

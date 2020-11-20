@@ -3,6 +3,13 @@
     {{message}}
     <input type="text" v-model="input_value" />
     {{input_value | capitalize}}
+    <!-- 二级路由 -->
+    <div class="tab_area">
+      <div v-for="tab of tab_list"><router-link :to="tab.path">{{tab.name}}</router-link></div>
+    </div>
+    <div class="show_area">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -13,7 +20,13 @@ export default {
   data() {
     return {
       message: "这是个demo",
-      input_value: ""
+      input_value: "",
+      tab_list:[
+        {name:'会员营销',path:'/about/Yxiao'},
+        {name:'会员卡设置',path:'/about/Card'},
+        {name:'会员卡管理',path:'/about/Menger'},
+        {name:'积分管理',path:'/about/Jifen'},
+      ]
     };
   },
   // filters:{
@@ -27,17 +40,14 @@ export default {
     // this.login()
   },
   mounted() {
-    var map = new Map();
-    map.set("first", "hello");
-    map.set("second", "world");
-    var map1 ={'name':'michael','age':'26'}
-    for (let [key, value] of map) {
-      console.log(key + " is " + value);
-    }
-    for(var i in map1){
-      console.log(i)
-      console.log(map1[i])
-    }
+    console.log(
+      [1, 5, 10, 15].filter(function(value, index, arr) {
+        console.log(value);
+        console.log(index);
+        console.log(arr);
+        return value > 9;
+      })
+    );
   },
   methods: {
     login() {
@@ -68,11 +78,39 @@ export default {
 <style>
 .countent {
   width: 100%;
-  height: 300px;
+  height: 500px;
   border: 1px solid greenyellow;
 }
-.countent > div {
+/* .countent > div {
   width: 90%;
   height: 100%;
+} */
+.tab_area{
+  width:90%;
+  margin: 20px auto;
+  height: 50px !important;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.tab_area>div{
+  width: 200px;
+  height: 40px;
+  background: rgba(0,0,0,0.6);
+  line-height: 40px;
+  cursor: pointer;
+  color: white;
+}
+.tab_area>div>a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: whitesmoke;
+}
+.show_area{
+  width: 100%;
+  height:300px;
+  
 }
 </style>
