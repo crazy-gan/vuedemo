@@ -12,7 +12,7 @@
         </ul>
         <!-- 带着值的插槽  v-slot子组件传过来的值 作用域插槽-->
         <!-- 父组件向子组件传值，子组件用prop接受 -->
-		<HellowWorld :good='goods' v-slot='my_slot'>
+		<HellowWorld :good='goods' v-slot='my_slot' ref='hello' @soncomm='sonToFather'>
 			<button @click="testBtn(my_slot)">测试（父组件的按钮）</button>
         </HellowWorld> 
         
@@ -20,13 +20,13 @@
 		<button @click="btn_click">修改vuex值的按钮</button>
 		<!-- <button @click="btn_change">改变值的按钮</button> -->
 		<thisistest >
+            <!-- 插槽 -->
 			<template slot='red' >
-				<p style="color: black;">{{info1}}</p>
+				<p style="color: pink;">{{info1}}</p>
 			</template>
 			<template #blue>
-				<p>{{info2}}</p>
+				<!-- <p>{{info2}}</p> -->
 			</template>
-		
 		</thisistest>
 		<axiosDome></axiosDome>
     </div>
@@ -46,8 +46,8 @@
           data(){
               return{
                   info:'这是注册页',
-				  info1:'这是父组件里的(红色的)',
-				  info2:'这是父组件里的(蓝色的)',
+				  info1:'这是父组件里的内容（颜色是父组件给的）',
+				  info2:'',
                   goods:[
                     {name:'商品1',src:'static/img/bg-04.jpg'},
                     {name:'商品2',src:'static/img/bg-22.jpg'},
@@ -58,7 +58,8 @@
           },
           methods:{
 			  btn_click:function(){
-				  this.$store.commit('increment')
+                  this.$store.commit('increment')
+                  console.log(this.$refs.hello)
 				  // console.log(this.$store.state.count)
 			  },
               toInfo:function (good) {
@@ -72,7 +73,10 @@
               },
 			  testBtn(my_slot){
 				  console.log(my_slot.data)
-			  }
+			  },
+              sonToFather(res){
+                this.goods[3].name = res
+              }
         }
           
     }

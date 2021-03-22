@@ -17,43 +17,51 @@ const router = new Router({
     // mode:'history',
     routes: [
         {
-            path:'/',
-            redirect:'/home',
-            meta:{title:'淘宝'}
+            path: '/',
+            redirect: '/home',
+            meta: { title: '淘宝（瞎搞）' }
         },
-        {name:'home',path:'/home',components: Home,meta:{title:'淘宝'}},
+        { name: 'home', path: '/home', components: Home, meta: { title: '淘宝（瞎搞）' } },
         //二级路由，选项卡效果
         {
-            name:'about',
-            path:'/about',
+            name: 'about',
+            path: '/about',
             components: About,
-            meta:{title:'注册淘宝'},
-            children:[
+            meta: { title: '注册淘宝' },
+            children: [
                 {
-                    path:'Jifen',
-                    components:Jifen,
+                    path: 'Jifen',
+                    components: Jifen,
                 },
                 {
-                    path:'Card',
-                    components:Card,
+                    path: 'Card',
+                    components: Card,
                 },
                 {
-                    path:'Menger',
-                    components:Menger,
+                    path: 'Menger',
+                    components: Menger,
                 },
                 {
-                    path:'Yxiao',
-                    components:Yxiao,
+                    path: 'Yxiao',
+                    components: Yxiao,
                 },
             ]
         },
-        {name:'tab',path:'/tab',components: Tab,meta:{title:'登录淘宝'}},
-        {name:'goodInfo',path:'/tab',components: GoodInfo,meta:{title:'商品详情'}},
+        { name: 'tab', path: '/tab', components: Tab, meta: { title: '登录淘宝' } },
+        { name: 'goodInfo', path: '/tab', components: GoodInfo, meta: { title: '商品详情' } },
         {
-            path:'*',
-            redirect:'/home',
-            meta:{title:'淘宝'}
+            path: '*',
+            redirect: '/home',
+            meta: { title: '淘宝瞎搞' }
         }
     ]
+})
+router.beforeEach((to, from, next) => {
+    if(to.name == 'about'){
+        console.log('aboutabout')
+        next()
+    }else{
+        next()
+    }
 })
 export default router

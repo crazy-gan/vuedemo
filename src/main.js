@@ -12,7 +12,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
 //引入animate。css
-import 'animate.css';  
+import 'animate.css';
 
 //引入jquery
 import $ from 'jquery/dist/jquery.js';
@@ -34,11 +34,20 @@ Vue.use(VueWechatTitle)
 import './assets/Iconfont/css/font-awesome.css'
 
 //首字母大写筛选器
-Vue.filter('capitalize',function(value){
-	if(!value) return ''
-	value = value.toString()
-	return value.charAt(0).toUpperCase()+value.slice(1)
+Vue.filter('capitalize', function (value) {
+  if (!value) return ''
+  value = value.toString()
+  return value.charAt(0).toUpperCase() + value.slice(1)
 })
+
+// 全局自定义指令
+Vue.directive('focus2', {
+  inserted (el, binding) {
+    el.focus();
+    el.style.color=binding.value
+  }
+})
+
 Vue.config.silent = true
 Vue.config.productionTip = false
 //项目入口文件
@@ -48,5 +57,5 @@ new Vue({
   router,
   store,
   components: { App },//根组件
-  template: '<App/>'//组件模板
+  template: '<App/>',//组件模板
 })
