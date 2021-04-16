@@ -57,12 +57,12 @@
               }
           },
           methods:{
-			  btn_click:function(){
+			  btn_click(){
                   this.$store.commit('increment')
                   console.log(this.$refs.hello)
 				  // console.log(this.$store.state.count)
 			  },
-              toInfo:function (good) {
+              toInfo (good) {
                   this.$router.push({
                       name:'goodInfo',
                       query:{
@@ -74,6 +74,7 @@
 			  testBtn(my_slot){
 				  console.log(my_slot.data)
 			  },
+            //   子传父
               sonToFather(res){
                 this.goods[3].name = res
               }

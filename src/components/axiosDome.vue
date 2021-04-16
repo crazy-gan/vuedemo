@@ -48,11 +48,19 @@
       // this.login()
     },
     mounted() {
-      console.log(
-        [1, 5, 10, 15].filter(function (value, index, arr) {
-          return value > 9;
-        })
-      );
+      // console.log(
+      //   [1, 5, 10, 15].filter(function (value, index, arr) {
+      //     return value > 9;
+      //   })
+      // );
+      /*
+        对于 || 来说，如果条件判断结果为 true 就返回第一个操作数的值，如果为 false 就返回 第二个操作数的值。 
+        && 则相反，如果条件判断结果为 true 就返回第二个操作数的值，如果为 false 就返回第一 个操作数的值。
+        理解：||前面是false取第二个值，前面是true取前面true，&&前面是true取第二个值、前面是false返回false
+      */
+      let a = 80
+      console.log( a>10 && 10)
+
       let that = this
       bus.$on('bordertoch', (res) => {
         that.bordermsg = res

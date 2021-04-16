@@ -139,6 +139,7 @@ export default{
 	        }
 	      )
 	    },
+		// 兄弟组件传值
 		sendBorder(){
 			let color = this.color+=1
 			bus.$emit('bordertoch',color)
