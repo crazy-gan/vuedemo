@@ -102,7 +102,7 @@ export default{
 		this.vuex_value = this.$store.state.count
 		console.log(this.$store.state.count)
 		this.show = false
-		console.log(this.$route )
+		// console.log(this.$route )
 	},
 	computed:{
 		count(){
